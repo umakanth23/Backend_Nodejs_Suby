@@ -12,7 +12,8 @@ const path = require('path');
 
 
 const app = express();
-const PORT = 4000;
+//const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 dotenv.config();
 
 //connecting to MongoDB
@@ -37,6 +38,6 @@ app.listen(PORT,()=>{
 
 //creating route using server
 
-app.use('/home',(req,res)=>{
+app.use('/',(req,res)=>{
     res.send("<h1>Welcome to SUBY Project</h1>")
 })
